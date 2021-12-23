@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Seminarverwaltung App</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="FH-Dortmund-Logo" />
+      <h1>SeminarR App</h1>
+    </header>
+    <nav>
+      <!-- Navigation -->
+      <a href="SeminareListe.html">Seminarliste</a>
+      <a href="SeminarDetail.html">Seminardetails</a>
+      <a href="SeminarleiterDetail.html">Seminarleiter</a>
+      <a href="Seminaranlegen.html">Seminar anlegen</a>
+    </nav>
+    <main>
+      <h2>Seminar Anlegen</h2>
+      <form
+        action="https://labs.inf.fh-dortmund.de/seminarApp/testCreateSeminar.php"
+        method="post"
+      >
+        <fieldset>
+          <legend>Anlegen eines Seminars</legend>
+          <label for="titel">Seminartitel: </label>
+          <input
+            type="text"
+            name="semtitle"
+            id="titel"
+            size="20"
+            maxlength="20"
+            placeholder="bsp.Wirtschaft"
+            pattern="[A-Z]{1}[a-z]*"
+            autofocus
+            required
+          /><br />
+          <label for="tutor">Tutoren: </label>
+          <input
+            type="text"
+            name="semtutors"
+            id="tutor"
+            pattern="[a-z]{2,4}\d\,"
+            required
+          /><br />
+          <label for="leiter">SeminarleiterIn: </label>
+          <select name="semlead" id="leiter">
+            <option value="Prof. Dr. Sven Jörges">Sven Jörges</option>
+            <option value="Prof. Dr. Johannes Cleven">Johannes Cleven</option>
+            <option value="Prof. Dr. Mariele Hagen">Mariele Hagen</option>
+            <option value="Prof. Dr. Sebastian Bab ">Sebastian Bab </option>
+            <option value="Prof. Dr. Christoph Engels "
+              >Christoph Engels
+            </option>
+          </select>
+          <br />
+          <label for="datum">Datum: </label>
+          <input type="date" name="semdate" id="datum" /><br />
+          <label for="von">Startzeit:</label>
+          <input
+            type="time"
+            name="semstart"
+            id="von"
+            min="08:00"
+            max="16:00"
+          /><br />
+          <label for="bis">Endezeit: </label>
+          <input
+            type="time"
+            name="semend"
+            id="bis"
+            min="08:00"
+            max="18:00"
+          /><br />
+          <label for="anzahl">Anzahl Plätze: </label>
+          <input
+            type="number"
+            name="semseats"
+            id="anzahl"
+            min="0"
+            max="100"
+          /><br />
+        </fieldset>
+        <fieldset>
+          <input type="submit" value="Anlegen" />
+        </fieldset>
+      </form>
+    </main>
+    <aside>
+       <h2>information</h2>
+       <p>die information über Vorlesungen</p>
+    </aside>
+    <footer>©<strong>Copyright</strong> 2020. Alle Rechte vorbehalten.</footer>
+  </body>
+</html>
